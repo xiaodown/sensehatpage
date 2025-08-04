@@ -9,8 +9,8 @@ def index():
 
 @app.route('/data')
 def data():
-    temperature, humidity = get_sensor_data()
-    return jsonify(temperature=temperature, humidity=humidity)
+    sensor_data = get_sensor_data()
+    return jsonify(sensor_data)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)

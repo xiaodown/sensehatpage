@@ -1,2 +1,3 @@
 Flask
 sense-hat
+git+https://github.com/RPi-Distro/RTIMULib@V7.2.1#subdirectory=Linux/python
