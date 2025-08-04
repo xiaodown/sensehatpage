@@ -6,6 +6,12 @@
     <title>Temperature and Humidity Monitor</title>
     <script src="{{ url_for('static', filename='main.js') }}"></script>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrollbars */
+        }
         body {
             background: #222;
             color: #fff;
@@ -13,9 +19,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             min-height: 100vh;
             margin: 0;
+            padding-top: 10vh;
         }
         .container {
             display: flex;
@@ -23,7 +30,7 @@
             gap: 3vw;
             justify-content: center;
             align-items: center;
-            width: 100vw;
+            width: 100%; /* Changed from 100vw to 100% */
         }
         .sensor-box {
             border-radius: 2em;
@@ -61,6 +68,14 @@
             margin-top: 0.5em;
             letter-spacing: 0.05em;
         }
+        .sensor-row {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            width: 100%;
+            justify-content: flex-end;
+            gap: 0.2em;
+        }
         @media (max-width: 700px) {
             .container {
                 flex-direction: column;
@@ -80,8 +95,10 @@
             <div class="sensor-label">Temperature</div>
         </div>
         <div class="sensor-box">
-            <span class="sensor-value" id="humidity">--</span>
-            <span class="sensor-unit">%</span>
+            <div class="sensor-row">
+                <span class="sensor-value" id="humidity">--</span>
+                <span class="sensor-unit">%</span>
+            </div>
             <div class="sensor-label">Humidity</div>
         </div>
     </div>
