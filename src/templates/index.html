@@ -52,15 +52,23 @@
             color: #225588;
         }
         .sensor-value {
+            display: inline-block;
             font-size: 4em;
             font-weight: bold;
             margin-bottom: 0.2em;
             -webkit-text-stroke: 2px #000;
-            text-stroke: 2px #000; /* For future compatibility */
+            text-stroke: 2px #000;
+            text-align: center;
+            width: 100%;
         }
         .sensor-unit {
+            position: absolute;
+            right: 0;
             font-size: 1.5em;
             margin-left: 0.1em;
+            top: 50%;
+            transform: translateY(-50%);
+            padding-left: 0.2em;
         }
         .sensor-label {
             font-size: 1.1em;
@@ -69,12 +77,11 @@
             letter-spacing: 0.05em;
         }
         .sensor-row {
-            display: flex;
-            flex-direction: row;
-            align-items: baseline;
+            position: relative;
             width: 100%;
-            justify-content: center;   /* Center horizontally */
-            gap: 0.2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         @media (max-width: 700px) {
             .container {
