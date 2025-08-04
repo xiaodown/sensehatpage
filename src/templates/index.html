@@ -5,12 +5,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature and Humidity Monitor</title>
     <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <style>
+        body {
+            background: #222;
+            color: #fff;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 3vw;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+        }
+        .sensor-box {
+            border-radius: 2em;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+            padding: 2em 3em;
+            min-width: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* Pastel orange for temperature */
+        .sensor-box:nth-child(1) {
+            background: #ffe5b4;
+            color: #b85c00;
+        }
+        /* Pastel blue for humidity */
+        .sensor-box:nth-child(2) {
+            background: #cce6ff;
+            color: #225588;
+        }
+        .sensor-value {
+            font-size: 4em;
+            font-weight: bold;
+            margin-bottom: 0.2em;
+        }
+        .sensor-unit {
+            font-size: 1.5em;
+            margin-left: 0.1em;
+        }
+        .sensor-label {
+            font-size: 1.1em;
+            color: #555;
+            margin-top: 0.5em;
+            letter-spacing: 0.05em;
+        }
+        @media (max-width: 700px) {
+            .container {
+                flex-direction: column;
+                gap: 2em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Temperature and Humidity Monitor</h1>
-    <div>
-        <p>Temperature: <span id="temperature">Loading...</span> °C</p>
-        <p>Humidity: <span id="humidity">Loading...</span> %</p>
+    <h1 style="margin-bottom: 2em;">Temperature and Humidity Monitor</h1>
+    <div class="container">
+        <div class="sensor-box">
+            <span class="sensor-value" id="temperature">--</span>
+            <span class="sensor-unit">°C</span>
+            <div class="sensor-label">Temperature</div>
+        </div>
+        <div class="sensor-box">
+            <span class="sensor-value" id="humidity">--</span>
+            <span class="sensor-unit">%</span>
+            <div class="sensor-label">Humidity</div>
+        </div>
     </div>
 </body>
 </html>

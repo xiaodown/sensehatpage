@@ -4,9 +4,9 @@ def get_sensor_data():
 
     sense = SenseHat()
     
-    # Read temperature and humidity
-    temperature = sense.get_temperature()
-    humidity = sense.get_humidity()
+    # Read temperature and humidity, rounded to 1 decimal place
+    temperature = round(sense.get_temperature(), 1)
+    humidity = round(sense.get_humidity(), 1)
     
     return {
         'temperature': temperature,
