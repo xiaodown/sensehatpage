@@ -6,6 +6,12 @@
     <title>Temperature and Humidity Monitor</title>
     <script src="{{ url_for('static', filename='main.js') }}"></script>
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrollbars */
+        }
         body {
             background: #222;
             color: #fff;
@@ -16,7 +22,8 @@
             justify-content: flex-start;
             padding-top: 10vh;
             min-height: 100vh;
-            margin: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
         .container {
             display: flex;
@@ -24,7 +31,8 @@
             gap: 3vw;
             justify-content: center;
             align-items: center;
-            width: 100vw;
+            width: 100%; /* Changed from 100vw to 100% */
+            box-sizing: border-box;
         }
         .sensor-box {
             border-radius: 2em;
