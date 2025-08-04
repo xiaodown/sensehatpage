@@ -3,8 +3,8 @@ const updateSensorData = async () => {
         const response = await fetch('/data'); 
         const data = await response.json();
         
-        document.getElementById('temperature').innerText = data.temperature;
-        document.getElementById('humidity').innerText = data.humidity;
+        document.getElementById('temperature').innerText = Number(data.temperature).toFixed(1);
+        document.getElementById('humidity').innerText = Number(data.humidity).toFixed(1);
     } catch (error) {
         console.error('Error fetching sensor data:', error);
     }
